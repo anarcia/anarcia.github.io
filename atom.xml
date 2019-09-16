@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>丧丧的blog</title>
+  
+  <subtitle>很丧很丧</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://ccblog.club/"/>
+  <updated>2019-09-16T06:58:51.083Z</updated>
+  <id>http://ccblog.club/</id>
+  
+  <author>
+    <name>cc</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node+mongoose增删改查思路</title>
+    <link href="http://ccblog.club/2019/09/16/node-mongoose%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%80%9D%E8%B7%AF/"/>
+    <id>http://ccblog.club/2019/09/16/node-mongoose增删改查思路/</id>
+    <published>2019-09-16T06:57:26.000Z</published>
+    <updated>2019-09-16T06:58:51.083Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-建立views视图页面"><a href="#1-建立views视图页面" class="headerlink" title="1.建立views视图页面"></a>1.建立views视图页面</h3><table><thead><tr><th>界面名称</th><th>url地址</th></tr></thead><tbody><tr><td>index.html</td><td>/home</td></tr><tr><td>table.html</td><td>/table</td></tr><tr><td>edit.html</td><td>/table/edit</td></tr></tbody></table><a id="more"></a><h3 id="2-安装相关模块插件"><a href="#2-安装相关模块插件" class="headerlink" title="2.安装相关模块插件"></a>2.安装相关模块插件</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm i -S express//安装组件</span><br><span class="line"></span><br><span class="line">npm i -S art-template</span><br><span class="line">npm i -S express-art-template//安装组件</span><br><span class="line"></span><br><span class="line">npm i -S body-parser//用于post获取数据</span><br><span class="line"></span><br><span class="line">npm i -g nodemon//全局安装，用于实时观察代码改动</span><br></pre></td></tr></table></figure><h3 id="3-建立node服务器"><a href="#3-建立node服务器" class="headerlink" title="3.建立node服务器"></a>3.建立node服务器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"开始监听"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)<span class="comment">//开启端口127.0.0.1:3000的服务</span></span><br></pre></td></tr></table></figure><h3 id="4-node中启用相关插件"><a href="#4-node中启用相关插件" class="headerlink" title="4.node中启用相关插件"></a>4.node中启用相关插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">require</span>(<span class="string">'body-parser'</span>)</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/public'</span>,express.static(<span class="string">'./public/'</span>)) <span class="comment">//用于使用public目录中的js，css等</span></span><br><span class="line"></span><br><span class="line">app.engine(<span class="string">'html'</span>,<span class="built_in">require</span>(<span class="string">'express-art-template'</span>))</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded([extend:<span class="literal">false</span>]))</span><br><span class="line">app.use(bodyParser.json())</span><br></pre></td></tr></table></figure><h3 id="5-开启路由"><a href="#5-开启路由" class="headerlink" title="5.开启路由"></a>5.开启路由</h3><p>app.js端</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./routers.js'</span>)</span><br><span class="line"></span><br><span class="line">app.use(router) <span class="comment">//导入router模块</span></span><br></pre></td></tr></table></figure><p>router端</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var router = express.Router()</span><br></pre></td></tr></table></figure><h3 id="6-定义传递方式路径"><a href="#6-定义传递方式路径" class="headerlink" title="6.定义传递方式路径"></a>6.定义传递方式路径</h3><table><thead><tr><th>请求方式</th><th>传递路径</th><th>传递参数</th><th>备注</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h3 id="7-建立mongodb库"><a href="#7-建立mongodb库" class="headerlink" title="7.建立mongodb库"></a>7.建立mongodb库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line"></span><br><span class="line">mongoose.connect(&apos;mongodb:localhost://....&apos;)</span><br><span class="line"></span><br><span class="line">var schema = mongoose.schema()</span><br><span class="line"></span><br><span class="line">var userSchema = new schema(&#123;</span><br><span class="line">data:&#123;&#123;options&#125;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = mongooser.model(&quot;user&quot;,userSchema)</span><br></pre></td></tr></table></figure><h3 id="8-增删改查"><a href="#8-增删改查" class="headerlink" title="8.增删改查"></a>8.增删改查</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//请自行查询mongoose语法，例：</span><br><span class="line">var user = require(&apos;./model/user.js&apos;)</span><br><span class="line"></span><br><span class="line">router.get(&apos;/&apos;,function(req,res)&#123;</span><br><span class="line">user.find(function(err)&#123;</span><br><span class="line">if(err)&#123;</span><br><span class="line">consolo.log(err)</span><br><span class="line">&#125;</span><br><span class="line">res.render(&apos;index.html&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-建立views视图页面&quot;&gt;&lt;a href=&quot;#1-建立views视图页面&quot; class=&quot;headerlink&quot; title=&quot;1.建立views视图页面&quot;&gt;&lt;/a&gt;1.建立views视图页面&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;界面名称&lt;/th&gt;
+&lt;th&gt;url地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;index.html&lt;/td&gt;
+&lt;td&gt;/home&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;table.html&lt;/td&gt;
+&lt;td&gt;/table&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;edit.html&lt;/td&gt;
+&lt;td&gt;/table/edit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="nodejs" scheme="http://ccblog.club/tags/nodejs/"/>
+    
+      <category term="mongodb" scheme="http://ccblog.club/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown基本语法</title>
+    <link href="http://ccblog.club/2019/09/15/markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <id>http://ccblog.club/2019/09/15/markdown基本语法/</id>
+    <published>2019-09-15T06:48:47.000Z</published>
+    <updated>2019-09-15T06:51:37.293Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">链接</a></p><p><del>有链接我为什么要自己写？</del></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/191d1e21f7ed&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;有链接我为什么要自己写？&lt;/del&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="html" scheme="http://ccblog.club/tags/html/"/>
+    
+      <category term="语法基础" scheme="http://ccblog.club/tags/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>突然好想你-五月天</title>
+    <link href="http://ccblog.club/2019/09/15/%E7%AA%81%E7%84%B6%E5%A5%BD%E6%83%B3%E4%BD%A0-%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
+    <id>http://ccblog.club/2019/09/15/突然好想你-五月天/</id>
+    <published>2019-09-15T06:06:44.000Z</published>
+    <updated>2019-09-15T06:46:53.937Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul><li>原链接</li><li>吉他谱</li><li>弹唱</li><li>总结</li></ul><h5 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h5><p>​    <a href="https://yoopu.me/view/g100Ay1J" target="_blank" rel="noopener">原谱链接</a></p><a id="more"></a><p><del>低音唱什么五月天？</del></p><p>​    </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;原链接&lt;/li&gt;
+&lt;li&gt;吉他谱&lt;/li&gt;
+&lt;li&gt;弹唱&lt;/li&gt;
+&lt;li&gt;总结&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 id=&quot;让我们开始吧&quot;&gt;&lt;a href=&quot;#让我们开始吧&quot; class=&quot;headerlink&quot; title=&quot;让我们开始吧&quot;&gt;&lt;/a&gt;让我们开始吧&lt;/h5&gt;&lt;p&gt;​    &lt;a href=&quot;https://yoopu.me/view/g100Ay1J&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原谱链接&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="吉他谱" scheme="http://ccblog.club/categories/%E5%90%89%E4%BB%96%E8%B0%B1/"/>
+    
+    
+      <category term="有谱么" scheme="http://ccblog.club/tags/%E6%9C%89%E8%B0%B1%E4%B9%88/"/>
+    
+      <category term="弹唱" scheme="http://ccblog.club/tags/%E5%BC%B9%E5%94%B1/"/>
+    
+  </entry>
+  
+</feed>
