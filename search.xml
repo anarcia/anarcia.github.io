@@ -3,18 +3,6 @@
   <entry>
     <title><![CDATA[nojs和mongodb结合进行增删改查]]></title>
     <url>%2F2019%2F09%2F16%2Fnodejs%E5%92%8Cmongodb%E7%BB%93%E5%90%88%E8%BF%9B%E8%A1%8C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%2F</url>
-    <content type="text"><![CDATA[1.建立views视图页面 界面名称 url地址 index.html /home table.html /table edit.html /table/edit 2.安装相关模块插件12345678npm i -S express //安装组件npm i -S art-template npm i -S express-art-template //安装组件npm i -S body-parser //用于post获取数据npm i -g nodemon //全局安装，用于实时观察代码改动 3.建立node服务器12345678var express = require('express')var app = express() app.listen(3000,function()&#123; console.log("开始监听") &#125; &#125;) //开启端口127.0.0.1:3000的服务 4.node中启用相关插件12345678var body = require('body-parser')app.use('/public',express.static('./public/')) //用于使用public目录中的js，css等app.engine('html',require('express-art-template'))app.use(bodyParser.urlencoded([extend:false]))app.use(bodyParser.json()) 5.开启路由app.js端 123var router = require('./routers.js')app.use(router) //导入router模块 router端 1var router = express.Router() 6.定义传递方式路径 请求方式 传递路径 传递参数 备注 7.建立mongodb库1234567891011var mongoose = require(&apos;mongoose&apos;)mongooser.connect(&apos;mongodb:localhost://....&apos;)var schema = mongoose.schema()var userSchema = new schema(&#123; data:&#123;&#123;options&#125;&#125;&#125;)module.exports = mongooser.model(&quot;user&quot;,userSchema) ### 8.增删改查擦1234567891011//请自行查询mongoose语法，例：var user = require(&apos;./model/user.js&apos;)router.get(&apos;/&apos;,function(req,res)&#123; user.find(function(err)&#123; if(err)&#123; consolo.log(err) &#125; res.render(&apos;index.html&apos;) &#125;)&#125;)]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>语法基础</tag>
-        <tag>nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[nojs和mongodb结合进行增删改查]]></title>
-    <url>%2F2019%2F09%2F16%2Fnojs%E5%92%8Cmongodb%E7%BB%93%E5%90%88%E8%BF%9B%E8%A1%8C%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%2F</url>
     <content type="text"><![CDATA[1.建立views视图页面 界面名称 url地址 index.html /home table.html /table edit.html /table/edit 2.安装相关模块插件12345678npm i -S express //安装组件npm i -S art-template npm i -S express-art-template //安装组件npm i -S body-parser //用于post获取数据npm i -g nodemon //全局安装，用于实时观察代码改动 3.建立node服务器12345678var express = require('express')var app = express() app.listen(3000,function()&#123; console.log("开始监听") &#125; &#125;) //开启端口127.0.0.1:3000的服务 4.node中启用相关插件12345678var body = require('body-parser')app.use('/public',express.static('./public/')) //用于使用public目录中的js，css等app.engine('html',require('express-art-template'))app.use(bodyParser.urlencoded([extend:false]))app.use(bodyParser.json()) 5.开启路由app.js端 123var router = require('./routers.js')app.use(router) //导入router模块 router端 1var router = express.Router() 6.定义传递方式路径 请求方式 传递路径 传递参数 备注 7.建立mongodb库1234567891011var mongoose = require(&apos;mongoose&apos;)mongoose.connect(&apos;mongodb:localhost://....&apos;)var schema = mongoose.schema()var userSchema = new schema(&#123; data:&#123;&#123;options&#125;&#125;&#125;)module.exports = mongooser.model(&quot;user&quot;,userSchema) ### 8.增删改查擦1234567891011//请自行查询mongoose语法，例：var user = require(&apos;./model/user.js&apos;)router.get(&apos;/&apos;,function(req,res)&#123; user.find(function(err)&#123; if(err)&#123; consolo.log(err) &#125; res.render(&apos;index.html&apos;) &#125;)&#125;)]]></content>
       <categories>
         <category>前端</category>
