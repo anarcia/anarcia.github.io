@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[session持久化问题]]></title>
+    <url>%2F2019%2F10%2F10%2Fsession%E6%8C%81%E4%B9%85%E5%8C%96%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[一 ，问题来源​ 在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？ 二 ， 解决办法​ 需要用到express-session以及connect-mongo 12var session = require(&apos;express-session&apos;)const MongoStore = require(&apos;connect-mongo&apos;)(session) ​ 然后再进行相关配置 12345678910111213app.use(session(&#123; secret:&apos;keyboard cat&apos;, resave:false, saveUninitialized:true, rolling:true, cookie:&#123; maxAge:1000*30*60 &#125;, store:new MongoStore(&#123; url:&quot;mongodb://localhost/device&quot;, touchAfter:24 * 3600 &#125;)&#125;)) 之后再到router之中定义session 三 ， 两个端口之间的跨域问题直接上代码，复制粘贴便可 1234567app.all(&apos;*&apos;,(req,res,next)=&gt;&#123; res.header(&quot;Access-Control-Allow-Credentials&quot;,&apos;true&apos;) res.header(&quot;Access-Control-Allow-Origin&quot;,req.headers.origin) res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,GET,POST,DELETE,OPTIONS&quot;) res.header(&apos;Access-Control-Allow-Headers&apos;,&quot;Content-Type,username&quot;) next()&#125;) 结束！]]></content>
+      <categories>
+        <category>-前端</category>
+      </categories>
+      <tags>
+        <tag>-express -nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue基础项目留言本]]></title>
+    <url>%2F2019%2F10%2F03%2Fvue%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%E7%95%99%E8%A8%80%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[一 。创建项目参考上文，这里不多说二 。 静态页面首先考虑当前界面到底需要几个模板 在这里考虑到了四个组件 APP.vue作为主界面框架 add.vue作为表单的组件 list.vue作为表格组件 ltem.vue作为每行列表的组件 组件传递当父组件向子组件传递内容时 父组件通过 1v-bind:XXX=&apos;XXX&apos; 绑定元素 子组件通过 123prop：&#123; XXX&#125; 获取元素 组件调用当父组件需要调用这个子组件时 父组件通过 1import XXX from &apos;xxx&apos; 获取子组件 然后 123components:&#123; XXX&#125; 调用子组件]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>-vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[webpack3配置（若前文无法打开请看这篇）]]></title>
     <url>%2F2019%2F10%2F03%2Fwebpack3%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[一，基本配置1.创建src文件夹用于存放主文件​ 2.创建dist文件夹存放webpack转换过的文件3.在根目录下创建webpack.config.js文件用于修改webpack配置4.在src文件夹中创建index.html（随意，建议遵循mvc建立views文件夹），main.js（所有js和css的入口文件）在html不导入任何的js和css包 二，详细配置1.webpack-dev-server该组件用于自动将src的文件打包到dist变成webpack格式输出 123456789101112131415161718192021&lt;!--&gt;终端&lt;--!&gt;npm init -y //初始化项目npm init webpack-dev-server //安装组件&lt;!--&gt;package.json&lt;--!&gt; "scripts": &#123; "test": "echo \"Error: no test specified\" &amp;&amp; exit 1", "dev": "webpack-dev-server --open --port 3000 --contentBase src --hot"&#125;//执行自动打开 绑定3000端口 设src为根目录 启动热更新&lt;!--&gt;配置文件&lt;--!&gt;const path = require('path')module.exports = &#123; entry:path.join(__dirname,'./src/main.js'), //入口文件 output:&#123; path:path.join(__dirname,'./dist'),//出口文件 filename:'bundle.js' &#125;&#125; 2.html-webpack-plugin该组件用于自动生成一个和html相同的界面并且导入bundle.js 123456789101112&lt;!--&gt;终端&lt;--!&gt;npm i html-webpack-plugin&lt;!--&gt;配置文件&lt;--!&gt;plugins:[ new webpack.HotModuleReplacementPlugin(),//new一个热更新的模块对象 new htmlWbppackFlugin(&#123; //创建一个在内存中生成html页面的插件 template:path.join(__dirname,'./src/index.html'),//指定模板页面 filename:'index.html' &#125;) ] 3.导入css/sass/图标/图像url等文件通过各种loader让webpack能够识别这些东西 123456789101112 &lt;!--&gt;终端&lt;--!&gt;npm i css-loader file-loadernpm i url-loader &lt;!--&gt;配置文件&lt;--!&gt; module:&#123;//这个节点用于配置所有的第三方模块加载器 rules:[//所有模块的匹配规则 &#123; test: /\.css$/ ,use:['style-loader','css-loader']&#125;, &#123; test: /\.(jpg|png|gif|jepg)$/,use:'url-loader?limit=7631&amp;name=[hash:8]-[name].[ext]'&#125;,//读取图片 &#123; test: /\.(ttf|eot|svg|woff|woff2)$/,use:"url-loader"&#125;//处理字体文件 ] &#125; 4.通过babel插件来识别es6等高级语言1234567891011&lt;!--&gt;终端&lt;--!&gt;npm i babel-core babel-loader babel-plugin-transform-runtimenpm i babel-preset-env babel-preset-stage-0&lt;!--&gt;配置文件&lt;--!&gt; rules:[//所有模块的匹配规则 &#123; test: /\.css$/ ,use:['style-loader','css-loader']&#125;, &#123; test: /\.(jpg|png|gif|jepg)$/,use:'url-loader?limit=7631&amp;name=[hash:8]-[name].[ext]'&#125;,//读取图片 &#123; test: /\.(ttf|eot|svg|woff|woff2)$/,use:"url-loader"&#125;,//处理字体文件 &#123; &#123;test:/\.js$/,use:"bebel-loader",exclude:/node_modules/&#125;&#125;//在配置时，必须把node_modules排除 ] 然后在根目录新建一个.babelrc的配置文件，为json格式 12"presets":["env","stage-0"],"plugins":["transform-runtime"] 注意 由于本文是基于webpack3.X的配置，目前普遍使用4.X.因此，babel-core的版本必须降为6.X并且babel-loader的版本必须降到7.X，不然你会被报错到怀疑人生。如果你已经将上面的配置操作完毕并且对html，css等操作没有报错的话，拿webpack3.X的配置就基本okk了。]]></content>

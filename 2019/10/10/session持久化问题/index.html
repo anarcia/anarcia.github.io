@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="目录 原链接 吉他谱 弹唱 总结 让我们开始吧​    原谱链接">
-<meta name="keywords" content="有谱么,弹唱">
+  <meta name="description" content="一 ，问题来源​    在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？">
+<meta name="keywords" content="-express -nodejs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="突然好想你-五月天">
-<meta property="og:url" content="http://ccblog.club/2019/09/15/突然好想你-五月天/index.html">
+<meta property="og:title" content="session持久化问题">
+<meta property="og:url" content="http://ccblog.club/2019/10/10/session持久化问题/index.html">
 <meta property="og:site_name" content="丧丧的blog">
-<meta property="og:description" content="目录 原链接 吉他谱 弹唱 总结 让我们开始吧​    原谱链接">
+<meta property="og:description" content="一 ，问题来源​    在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-15T06:46:53.937Z">
+<meta property="og:updated_time" content="2019-10-10T05:49:29.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="突然好想你-五月天">
-<meta name="twitter:description" content="目录 原链接 吉他谱 弹唱 总结 让我们开始吧​    原谱链接">
-  <link rel="canonical" href="http://ccblog.club/2019/09/15/突然好想你-五月天/">
+<meta name="twitter:title" content="session持久化问题">
+<meta name="twitter:description" content="一 ，问题来源​    在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？">
+  <link rel="canonical" href="http://ccblog.club/2019/10/10/session持久化问题/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>突然好想你-五月天 | 丧丧的blog</title>
+  <title>session持久化问题 | 丧丧的blog</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://ccblog.club/2019/09/15/突然好想你-五月天/">
+    <link itemprop="mainEntityOfPage" href="http://ccblog.club/2019/10/10/session持久化问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cc">
@@ -282,7 +282,7 @@
       <meta itemprop="name" content="丧丧的blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">突然好想你-五月天
+        <h1 class="post-title" itemprop="name headline">session持久化问题
 
           
         </h1>
@@ -298,7 +298,7 @@
                 
               
 
-              <time title="创建时间：2019-09-15 14:06:44 / 修改时间：14:46:53" itemprop="dateCreated datePublished" datetime="2019-09-15T14:06:44+08:00">2019-09-15</time>
+              <time title="创建时间：2019-10-10 13:42:01 / 修改时间：13:49:29" itemprop="dateCreated datePublished" datetime="2019-10-10T13:42:01+08:00">2019-10-10</time>
             </span>
           
             
@@ -311,7 +311,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/吉他谱/" itemprop="url" rel="index"><span itemprop="name">吉他谱</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">-前端</span></a></span>
 
                 
                 
@@ -338,7 +338,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/15/突然好想你-五月天/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/09/15/突然好想你-五月天/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/2019/10/10/session持久化问题/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/10/session持久化问题/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -352,15 +352,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul>
-<li>原链接</li>
-<li>吉他谱</li>
-<li>弹唱</li>
-<li>总结</li>
-</ul><h5 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h5><p>​    <a href="https://yoopu.me/view/g100Ay1J" target="_blank" rel="noopener">原谱链接</a></p><a id="more"></a>
+        <h4 id="一-，问题来源"><a href="#一-，问题来源" class="headerlink" title="一 ，问题来源"></a>一 ，问题来源</h4><p>​    在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？</p><a id="more"></a>
+<h4 id="二-，-解决办法"><a href="#二-，-解决办法" class="headerlink" title="二 ， 解决办法"></a>二 ， 解决办法</h4><p>​    需要用到express-session以及connect-mongo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var session = require(&apos;express-session&apos;)</span><br><span class="line">const MongoStore = require(&apos;connect-mongo&apos;)(session)</span><br></pre></td></tr></table></figure>
 
-<p><del>低音唱什么五月天？</del></p>
-<p>​    </p>
+<p>​    然后再进行相关配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">app.use(session(&#123;</span><br><span class="line">    secret:&apos;keyboard cat&apos;,</span><br><span class="line">    resave:false,</span><br><span class="line">    saveUninitialized:true,</span><br><span class="line">    rolling:true,</span><br><span class="line">    cookie:&#123;</span><br><span class="line">        maxAge:1000*30*60</span><br><span class="line">    &#125;,</span><br><span class="line">    store:new MongoStore(&#123;</span><br><span class="line">        url:&quot;mongodb://localhost/device&quot;,</span><br><span class="line">        touchAfter:24 * 3600</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+
+<p>之后再到router之中定义session</p>
+<h4 id="三-，-两个端口之间的跨域问题"><a href="#三-，-两个端口之间的跨域问题" class="headerlink" title="三 ， 两个端口之间的跨域问题"></a>三 ， 两个端口之间的跨域问题</h4><p>直接上代码，复制粘贴便可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;,(req,res,next)=&gt;&#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Credentials&quot;,&apos;true&apos;)</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;,req.headers.origin)</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,GET,POST,DELETE,OPTIONS&quot;)</span><br><span class="line">    res.header(&apos;Access-Control-Allow-Headers&apos;,&quot;Content-Type,username&quot;)</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>结束！</p>
 
     </div>
 
@@ -399,9 +402,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/有谱么/" rel="tag"># 有谱么</a>
-            
-              <a href="/tags/弹唱/" rel="tag"># 弹唱</a>
+              <a href="/tags/express-nodejs/" rel="tag"># -express -nodejs</a>
             
           </div>
         
@@ -411,15 +412,15 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/10/03/vue基础项目留言本/" rel="next" title="vue基础项目留言本">
+                  <i class="fa fa-chevron-left"></i> vue基础项目留言本
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/15/markdown基本语法/" rel="prev" title="markdown基本语法">
-                  markdown基本语法 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -471,7 +472,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#让我们开始吧"><span class="nav-number">1.1.</span> <span class="nav-text">让我们开始吧</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-，问题来源"><span class="nav-number">1.</span> <span class="nav-text">一 ，问题来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-，-解决办法"><span class="nav-number">2.</span> <span class="nav-text">二 ， 解决办法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-，-两个端口之间的跨域问题"><span class="nav-number">3.</span> <span class="nav-text">三 ， 两个端口之间的跨域问题</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
