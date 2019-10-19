@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[express配置]]></title>
+    <url>%2F2019%2F10%2F19%2Fexpress%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[通过express自带的模板创建带有许多基本上用不到的功能，不如自己配置一个简单易懂的expressapp.js 1234567891011121314151617181920212223242526272829303132333435var express = require(&apos;express&apos;)var app = express()var router = require(&apos;./router&apos;)var bodyParser = require(&apos;body-parser&apos;)var path = require(&apos;path&apos;)var session = require(&apos;express-session&apos;)const MongoStore = require(&apos;connect-mongo&apos;)(session)app.use(&apos;/node_modules/&apos;, express.static(path.join(__dirname, &apos;./node_modules/&apos;)))app.use(session(&#123; secret: &apos;keyboard cat&apos;, resave: false, saveUninitialized: true, rolling: true, cookie: &#123; maxAge: 1000 * 60 * 60 * 24 &#125;, store: new MongoStore(&#123; url: &quot;mongodb://localhost/device&quot;, touchAfter: 24 * 3600 &#125;)&#125;))app.use(&apos;/node_modules/&apos;, express.static(path.join(__dirname, &apos;./node_modules/&apos;)))app.use(&apos;/public/&apos;, express.static(path.join(__dirname, &apos;./public/&apos;)))app.use(bodyParser.urlencoded(&#123; extended: false &#125;))app.use(bodyParser.json())app.use(router)app.use(function (req, res) &#123; res.render(&apos;404.html&apos;)&#125;)app.listen(3000, function () &#123; console.log(&quot;监听成功&quot;)&#125;) router.js 1234var express = require(&quot;express&quot;)var router = express.Router()module.exports = router 后台只要这些配置，至于是做前后端不分离的mvc还是分离的mvvm的配置看需要再加减]]></content>
+      <categories>
+        <category>-前端</category>
+      </categories>
+      <tags>
+        <tag>express -nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue项目的坑]]></title>
+    <url>%2F2019%2F10%2F19%2Fvue%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[####]]></content>
+      <categories>
+        <category>-前端</category>
+      </categories>
+      <tags>
+        <tag>-vue-cli -vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[session持久化问题]]></title>
     <url>%2F2019%2F10%2F10%2Fsession%E6%8C%81%E4%B9%85%E5%8C%96%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[一 ，问题来源​ 在做web相关的需求时候一旦涉及到登录注册组件那就必然离不开cookie和session这两个东西。session是基于服务器进行存储的，所以当服务器进行重启亦或是掉线时所有的session数据都回摧毁，那么如何才能使session能在一段时间内持续存在呢？ 二 ， 解决办法​ 需要用到express-session以及connect-mongo 12var session = require(&apos;express-session&apos;)const MongoStore = require(&apos;connect-mongo&apos;)(session) ​ 然后再进行相关配置 12345678910111213app.use(session(&#123; secret:&apos;keyboard cat&apos;, resave:false, saveUninitialized:true, rolling:true, cookie:&#123; maxAge:1000*30*60 &#125;, store:new MongoStore(&#123; url:&quot;mongodb://localhost/device&quot;, touchAfter:24 * 3600 &#125;)&#125;)) 之后再到router之中定义session 三 ， 两个端口之间的跨域问题直接上代码，复制粘贴便可 1234567app.all(&apos;*&apos;,(req,res,next)=&gt;&#123; res.header(&quot;Access-Control-Allow-Credentials&quot;,&apos;true&apos;) res.header(&quot;Access-Control-Allow-Origin&quot;,req.headers.origin) res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,GET,POST,DELETE,OPTIONS&quot;) res.header(&apos;Access-Control-Allow-Headers&apos;,&quot;Content-Type,username&quot;) next()&#125;) 结束！]]></content>
