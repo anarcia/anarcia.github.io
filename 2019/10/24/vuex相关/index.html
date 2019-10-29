@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="一.vue的引用由于默认的main属性是属于vue.common.js而不是vue.js，因此如果进行普通引入">
-<meta name="keywords" content="-vue -webpack">
+  <meta name="description" content="一， vuex引入使用引入1npm i vuex在src目录下新建store文件夹">
+<meta name="keywords" content="vuex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue2.X集合webpack3.X时的各种坑">
-<meta property="og:url" content="http://ccblog.club/2019/09/20/vue2-X集合webpack3-X时的各种坑/index.html">
+<meta property="og:title" content="vuex相关">
+<meta property="og:url" content="http://ccblog.club/2019/10/24/vuex相关/index.html">
 <meta property="og:site_name" content="丧丧的blog">
-<meta property="og:description" content="一.vue的引用由于默认的main属性是属于vue.common.js而不是vue.js，因此如果进行普通引入">
+<meta property="og:description" content="一， vuex引入使用引入1npm i vuex在src目录下新建store文件夹">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-20T07:53:52.485Z">
+<meta property="og:updated_time" content="2019-10-24T03:13:55.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue2.X集合webpack3.X时的各种坑">
-<meta name="twitter:description" content="一.vue的引用由于默认的main属性是属于vue.common.js而不是vue.js，因此如果进行普通引入">
-  <link rel="canonical" href="http://ccblog.club/2019/09/20/vue2-X集合webpack3-X时的各种坑/">
+<meta name="twitter:title" content="vuex相关">
+<meta name="twitter:description" content="一， vuex引入使用引入1npm i vuex在src目录下新建store文件夹">
+  <link rel="canonical" href="http://ccblog.club/2019/10/24/vuex相关/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>vue2.X集合webpack3.X时的各种坑 | 丧丧的blog</title>
+  <title>vuex相关 | 丧丧的blog</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://ccblog.club/2019/09/20/vue2-X集合webpack3-X时的各种坑/">
+    <link itemprop="mainEntityOfPage" href="http://ccblog.club/2019/10/24/vuex相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cc">
@@ -282,7 +282,7 @@
       <meta itemprop="name" content="丧丧的blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">vue2.X集合webpack3.X时的各种坑
+        <h1 class="post-title" itemprop="name headline">vuex相关
 
           
         </h1>
@@ -298,7 +298,7 @@
                 
               
 
-              <time title="创建时间：2019-09-20 15:43:41 / 修改时间：15:53:52" itemprop="dateCreated datePublished" datetime="2019-09-20T15:43:41+08:00">2019-09-20</time>
+              <time title="创建时间：2019-10-24 10:42:10 / 修改时间：11:13:55" itemprop="dateCreated datePublished" datetime="2019-10-24T10:42:10+08:00">2019-10-24</time>
             </span>
           
             
@@ -311,7 +311,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">-前端</span></a></span>
 
                 
                 
@@ -338,7 +338,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/20/vue2-X集合webpack3-X时的各种坑/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/vue2-X集合webpack3-X时的各种坑/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/2019/10/24/vuex相关/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/24/vuex相关/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -352,25 +352,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h5 id="一-vue的引用"><a href="#一-vue的引用" class="headerlink" title="一.vue的引用"></a>一.vue的引用</h5><p>由于默认的main属性是属于vue.common.js而不是vue.js，因此如果进行普通引入</p><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br></pre></td></tr></table></figure>
+        <h4 id="一，-vuex引入使用"><a href="#一，-vuex引入使用" class="headerlink" title="一， vuex引入使用"></a>一， vuex引入使用</h4><p>引入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vuex</span><br></pre></td></tr></table></figure><p>在src目录下新建store文件夹</p><a id="more"></a>
 
-<p>是无法正常运行的。</p>
-<h6 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h6><p>1.直接导入vue路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;../node_module/vue/dist/vue.js&apos;</span><br></pre></td></tr></table></figure>
 
-<p>2.在webpack配置项中对路径进行改动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resolve:&#123;</span><br><span class="line">      alias:&#123; //修改路径</span><br><span class="line">          &quot;vue$&quot;:&quot;vue/dist/vue.js&quot;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="二-xxx-vue如何让html接受"><a href="#二-xxx-vue如何让html接受" class="headerlink" title="二.xxx.vue如何让html接受"></a>二.xxx.vue如何让html接受</h5><p>vue文件默认不被webpack识别，因此在进行render等模块操作时候需要导入loader</p>
-<h6 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i vue-loader vue-template-compiler</span><br><span class="line"></span><br><span class="line"> &#123;test:/\.vue$/,use:&quot;vue-loader&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>在文件夹中创建</p>
+<p>index.js //主文件</p>
+<p>state.js // 状态文件</p>
+<p>getters.js // 计算属性文件</p>
+<p>mutations.js // 状态事件文件</p>
+<p>actions.js // 更变状态文件(可异步)</p>
+<p>main.js中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import store from &apos;./store&apos;</span><br><span class="line"></span><br><span class="line">components:&#123;store&#125;</span><br></pre></td></tr></table></figure>
 
-<p>正常的话就可以进行vue与webpack的合作了</p>
-<p>。。</p>
-<p>然而你还是被报错报成猪头的话</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const VueLoaderPlugin = require(&apos;vue-loader/lib/plugin&apos;)</span><br><span class="line"></span><br><span class="line">new VueLoaderPlugin()</span><br></pre></td></tr></table></figure>
+<p>index.js中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import state from &apos;./state&apos;</span><br><span class="line">import mutations from &apos;./mutations&apos;</span><br><span class="line">import actions from &apos;./actions&apos;</span><br><span class="line">import getters from &apos;./getters&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">	state,</span><br><span class="line">	mutations,</span><br><span class="line">	actions,</span><br><span class="line">	getters</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>在配置文件的全局和plugins下分别加入这两条代码就可以识别了</p>
+<p>其他四个js中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export default(&#123;</span><br><span class="line">	</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -409,7 +409,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/vue-webpack/" rel="tag"># -vue -webpack</a>
+              <a href="/tags/vuex/" rel="tag"># vuex</a>
             
           </div>
         
@@ -419,8 +419,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/20/webpack3-X详细配置指南/" rel="next" title="webpack3.X详细配置指南">
-                  <i class="fa fa-chevron-left"></i> webpack3.X详细配置指南
+                <a href="/2019/10/19/express配置/" rel="next" title="express配置">
+                  <i class="fa fa-chevron-left"></i> express配置
                 </a>
               
             </div>
@@ -428,10 +428,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/02/通过vue-cli创建vue项目/" rel="prev" title="通过vue-cli创建vue项目">
-                  通过vue-cli创建vue项目 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -483,7 +479,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一-vue的引用"><span class="nav-number">1.</span> <span class="nav-text">一.vue的引用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#解决方法："><span class="nav-number">1.1.</span> <span class="nav-text">解决方法：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二-xxx-vue如何让html接受"><span class="nav-number">2.</span> <span class="nav-text">二.xxx.vue如何让html接受</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#解决方法"><span class="nav-number">2.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一，-vuex引入使用"><span class="nav-number">1.</span> <span class="nav-text">一， vuex引入使用</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
