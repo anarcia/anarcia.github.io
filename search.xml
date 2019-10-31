@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ts在vscode的配置以及其数据类型]]></title>
+    <url>%2F2019%2F10%2F31%2Fts%E5%9C%A8vscode%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%85%B6%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[一，配置vscode123456//终端tsc init //获取配置文件//tsconfig.json//打开outDir 设置js文件生成的默认路径//打开 &quot;experimentalDecorators&quot;: true使ts支持es7语法 之后再终端(T)中开启监听任务，则每次保存ts文件都会转化成js 二， ts的数据类型ts对于数据类型的定义比js严格的多，在通过var定义时(const和let也可以规定，但是因为他们的唯一性应该不需要设定)，一旦规定数据类型，下之后代码中更改变量若不为相同类型会产生报错 12var str:string = 'admin'//之后的str只能为字符串 ts的数据类型有String,Number,Array,Boolean,Tuple,enum,any,null,undefinded,never,void想比较与javascript,少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型1，tuple元组类型属于数组，是拥有多个数据类型的数组，因为在ts中严格规定的arrary的数据类型，当有多重类型时可以使用元组，但是规定的类型数量必须和数组内元素数量相同 1let arr:[number,string] = [1,'1'] 2,anyany类型可以适用于所有的类型 1var a:any = [1,2,4,&quot;2121&quot;] 3,enum枚举类型用于将特定的时间变为数字下标来表示 1234enum Err &#123;"undefinded"==-1,'unll'==-2,'success'=1&#125;const U:Err = Err['undefinded']consoloe.log(U) // -1//当没有规定数字时默认为从0开始的下标 4，voidvoid用于规定没有返回的函数 123function run():void&#123; console.log('run')&#125; 5, nevernever基本可以使用any代替，用于表示其他数据 123(()=&gt;&#123; throw new Error('err')&#125;)()]]></content>
+      <categories>
+        <category>-前端</category>
+      </categories>
+      <tags>
+        <tag>tpyescript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vuex相关]]></title>
     <url>%2F2019%2F10%2F24%2Fvuex%E7%9B%B8%E5%85%B3%2F</url>
     <content type="text"><![CDATA[一， vuex引入使用引入1npm i vuex在src目录下新建store文件夹 在文件夹中创建 index.js //主文件 state.js // 状态文件 getters.js // 计算属性文件 mutations.js // 状态事件文件 actions.js // 更变状态文件(可异步) main.js中 123import store from &apos;./store&apos;components:&#123;store&#125; index.js中 12345678910111213141516import Vue from &apos;vue&apos;import Vuex from &apos;vuex&apos;import state from &apos;./state&apos;import mutations from &apos;./mutations&apos;import actions from &apos;./actions&apos;import getters from &apos;./getters&apos;Vue.use(Vuex)export default new Vuex.Store(&#123; state, mutations, actions, getters&#125;) 其他四个js中 123export default(&#123; &#125;)]]></content>

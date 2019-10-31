@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccblog.club/"/>
-  <updated>2019-10-24T03:13:55.343Z</updated>
+  <updated>2019-10-31T07:35:49.501Z</updated>
   <id>http://ccblog.club/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ts在vscode的配置以及其数据类型</title>
+    <link href="http://ccblog.club/2019/10/31/ts%E5%9C%A8vscode%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%85%B6%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://ccblog.club/2019/10/31/ts在vscode的配置以及其数据类型/</id>
+    <published>2019-10-31T07:10:00.000Z</published>
+    <updated>2019-10-31T07:35:49.501Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一，配置vscode"><a href="#一，配置vscode" class="headerlink" title="一，配置vscode"></a>一，配置vscode</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//终端</span><br><span class="line">tsc init //获取配置文件</span><br><span class="line"></span><br><span class="line">//tsconfig.json</span><br><span class="line">//打开outDir 设置js文件生成的默认路径</span><br><span class="line">//打开 &quot;experimentalDecorators&quot;: true使ts支持es7语法</span><br></pre></td></tr></table></figure><a id="more"></a><p>之后再终端(T)中开启监听任务，则每次保存ts文件都会转化成js</p><h4 id="二，-ts的数据类型"><a href="#二，-ts的数据类型" class="headerlink" title="二， ts的数据类型"></a>二， ts的数据类型</h4><p>ts对于数据类型的定义比js严格的多，在通过var定义时(const和let也可以规定，但是因为他们的唯一性应该不需要设定)，一旦规定数据类型，下之后代码中更改变量若不为相同类型会产生报错</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="built_in">string</span> = <span class="string">'admin'</span></span><br><span class="line"><span class="comment">//之后的str只能为字符串</span></span><br></pre></td></tr></table></figure><h6 id="ts的数据类型有String-Number-Array-Boolean-Tuple-enum-any-null-undefinded-never-void"><a href="#ts的数据类型有String-Number-Array-Boolean-Tuple-enum-any-null-undefinded-never-void" class="headerlink" title="ts的数据类型有String,Number,Array,Boolean,Tuple,enum,any,null,undefinded,never,void"></a>ts的数据类型有String,Number,Array,Boolean,Tuple,enum,any,null,undefinded,never,void</h6><h6 id="想比较与javascript-少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型"><a href="#想比较与javascript-少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型" class="headerlink" title="想比较与javascript,少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型"></a>想比较与javascript,少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型</h6><h5 id="1，tuple"><a href="#1，tuple" class="headerlink" title="1，tuple"></a>1，tuple</h5><p>元组类型属于数组，是拥有多个数据类型的数组，因为在ts中严格规定的arrary的数据类型，当有多重类型时可以使用元组，但是规定的类型数量必须和数组内元素数量相同</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr:[<span class="built_in">number</span>,<span class="built_in">string</span>] = [<span class="number">1</span>,<span class="string">'1'</span>]</span><br></pre></td></tr></table></figure><h5 id="2-any"><a href="#2-any" class="headerlink" title="2,any"></a>2,any</h5><p>any类型可以适用于所有的类型</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a:any = [1,2,4,&quot;2121&quot;]</span><br></pre></td></tr></table></figure><h5 id="3-enum"><a href="#3-enum" class="headerlink" title="3,enum"></a>3,enum</h5><p>枚举类型用于将特定的时间变为数字下标来表示</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Err &#123;<span class="string">"undefinded"</span>==<span class="number">-1</span>,<span class="string">'unll'</span>==<span class="number">-2</span>,<span class="string">'success'</span>=<span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">const</span> U:Err = Err[<span class="string">'undefinded'</span>]</span><br><span class="line">consoloe.log(U) <span class="comment">// -1</span></span><br><span class="line"><span class="comment">//当没有规定数字时默认为从0开始的下标</span></span><br></pre></td></tr></table></figure><h5 id="4，void"><a href="#4，void" class="headerlink" title="4，void"></a>4，void</h5><p>void用于规定没有返回的函数</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>):<span class="title">void</span></span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'run'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="5-never"><a href="#5-never" class="headerlink" title="5, never"></a>5, never</h5><p>never基本可以使用any代替，用于表示其他数据</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'err'</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一，配置vscode&quot;&gt;&lt;a href=&quot;#一，配置vscode&quot; class=&quot;headerlink&quot; title=&quot;一，配置vscode&quot;&gt;&lt;/a&gt;一，配置vscode&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//终端&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tsc init //获取配置文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//tsconfig.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//打开outDir 设置js文件生成的默认路径&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//打开 &amp;quot;experimentalDecorators&amp;quot;: true使ts支持es7语法&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="-前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="tpyescript" scheme="http://ccblog.club/tags/tpyescript/"/>
+    
+  </entry>
   
   <entry>
     <title>vuex相关</title>
