@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccblog.club/"/>
-  <updated>2019-10-31T07:35:49.501Z</updated>
+  <updated>2019-11-01T02:26:50.770Z</updated>
   <id>http://ccblog.club/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ts的函数继承与类的修饰符</title>
+    <link href="http://ccblog.club/2019/11/01/ts%E7%9A%84%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%B1%BB%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <id>http://ccblog.club/2019/11/01/ts的函数继承与类的修饰符/</id>
+    <published>2019-11-01T01:58:31.000Z</published>
+    <updated>2019-11-01T02:26:50.770Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一，ts的继承"><a href="#一，ts的继承" class="headerlink" title="一，ts的继承"></a>一，ts的继承</h4><p> ts的基本依靠于extends和super分别获取到类的类型和类名从而继承</p><a id="more"></a><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    name:<span class="built_in">string</span></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    run():<span class="built_in">string</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>+"在锻炼"`</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//创建一个类</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Web <span class="keyword">extends</span> Person&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name)</span><br><span class="line">    &#125;</span><br><span class="line">   work():<span class="built_in">string</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>+"在工作"`</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="二，类的修饰符"><a href="#二，类的修饰符" class="headerlink" title="二，类的修饰符"></a>二，类的修饰符</h4><p>ts关于类的修饰符分为三种，用于指定类名的公开程度</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">public 公开，类和子类和外部都可以使用</span><br><span class="line">protected 保护，只有类和子类能使用</span><br><span class="line">private 私有，仅有类本身可以使用</span><br><span class="line">*/</span><br></pre></td></tr></table></figure><h6 id="个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。"><a href="#个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。" class="headerlink" title="个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。"></a>个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。</h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一，ts的继承&quot;&gt;&lt;a href=&quot;#一，ts的继承&quot; class=&quot;headerlink&quot; title=&quot;一，ts的继承&quot;&gt;&lt;/a&gt;一，ts的继承&lt;/h4&gt;&lt;p&gt; ts的基本依靠于extends和super分别获取到类的类型和类名从而继承&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="-前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="typescript" scheme="http://ccblog.club/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ts的函数</title>
+    <link href="http://ccblog.club/2019/11/01/ts%E7%9A%84%E5%87%BD%E6%95%B0/"/>
+    <id>http://ccblog.club/2019/11/01/ts的函数/</id>
+    <published>2019-11-01T00:37:43.000Z</published>
+    <updated>2019-11-01T00:50:49.645Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一-定义函数的方式"><a href="#一-定义函数的方式" class="headerlink" title="一, 定义函数的方式"></a>一, 定义函数的方式</h4><h6 id="1，函数声明"><a href="#1，函数声明" class="headerlink" title="1，函数声明"></a>1，函数声明</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function run():string &#123;</span><br><span class="line">return &quot;run&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a><h6 id="2-匿名函数"><a href="#2-匿名函数" class="headerlink" title="2,  匿名函数"></a>2,  匿名函数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var run = function():string &#123;</span><br><span class="line">return &quot;run&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="二，函数传参"><a href="#二，函数传参" class="headerlink" title="二，函数传参"></a>二，函数传参</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//声明</span><br><span class="line">function getinfo(name:string,age:number)&#123;</span><br><span class="line">return `$&#123;name&#125;-----$&#123;age&#125;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(getinfo(&apos;张三&apos;),18)</span><br><span class="line"></span><br><span class="line">//匿名</span><br><span class="line">var getinfo = function(name:string,age:number)&#123;</span><br><span class="line">return `$&#123;name&#125;-----$&#123;age&#125;`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="三，-可选参数"><a href="#三，-可选参数" class="headerlink" title="三， 可选参数"></a>三， 可选参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function getinfo(name:string,age?:number)&#123;</span><br><span class="line">return `$&#123;name&#125;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//可选参数放置于后面</span><br></pre></td></tr></table></figure><h4 id="四，默认参数"><a href="#四，默认参数" class="headerlink" title="四，默认参数"></a>四，默认参数</h4><h4 id="五，剩余参数"><a href="#五，剩余参数" class="headerlink" title="五，剩余参数"></a>五，剩余参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function sum(1,2,...result):number&#123;</span><br><span class="line">var sum = 0</span><br><span class="line">for(var i=0,i&lt;result.length,i++)&#123;</span><br><span class="line">sum += result[i]</span><br><span class="line">&#125;</span><br><span class="line">return sum</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(sum(1,2,3,4,5))</span><br></pre></td></tr></table></figure><h4 id="六，函数重载"><a href="#六，函数重载" class="headerlink" title="六，函数重载"></a>六，函数重载</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一-定义函数的方式&quot;&gt;&lt;a href=&quot;#一-定义函数的方式&quot; class=&quot;headerlink&quot; title=&quot;一, 定义函数的方式&quot;&gt;&lt;/a&gt;一, 定义函数的方式&lt;/h4&gt;&lt;h6 id=&quot;1，函数声明&quot;&gt;&lt;a href=&quot;#1，函数声明&quot; class=&quot;headerlink&quot; title=&quot;1，函数声明&quot;&gt;&lt;/a&gt;1，函数声明&lt;/h6&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function run():string &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	return &amp;quot;run&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="-前" scheme="http://ccblog.club/categories/%E5%89%8D/"/>
+    
+    
+      <category term="typescript" scheme="http://ccblog.club/tags/typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>ts在vscode的配置以及其数据类型</title>

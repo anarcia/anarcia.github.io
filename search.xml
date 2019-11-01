@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ts的函数继承与类的修饰符]]></title>
+    <url>%2F2019%2F11%2F01%2Fts%E7%9A%84%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%B1%BB%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6%2F</url>
+    <content type="text"><![CDATA[一，ts的继承 ts的基本依靠于extends和super分别获取到类的类型和类名从而继承 123456789101112131415161718class Person&#123; name:string constructor(name:string)&#123; this.name = name &#125; run():string&#123; return `$&#123;this.name&#125;+"在锻炼"` &#125;&#125;//创建一个类class Web extends Person&#123; constructor(name:string)&#123; super(name) &#125; work():string&#123; return `$&#123;this.name&#125;+"在工作"` &#125;&#125; 二，类的修饰符ts关于类的修饰符分为三种，用于指定类名的公开程度 12345/* public 公开，类和子类和外部都可以使用 protected 保护，只有类和子类能使用 private 私有，仅有类本身可以使用*/ 个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。]]></content>
+      <categories>
+        <category>-前端</category>
+      </categories>
+      <tags>
+        <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ts的函数]]></title>
+    <url>%2F2019%2F11%2F01%2Fts%E7%9A%84%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[一, 定义函数的方式1，函数声明123function run():string &#123; return &quot;run&quot;&#125; 2, 匿名函数123var run = function():string &#123; return &quot;run&quot; &#125; 二，函数传参1234567891011//声明function getinfo(name:string,age:number)&#123; return `$&#123;name&#125;-----$&#123;age&#125;`&#125;alert(getinfo(&apos;张三&apos;),18)//匿名var getinfo = function(name:string,age:number)&#123; return `$&#123;name&#125;-----$&#123;age&#125;`&#125; 三， 可选参数12345function getinfo(name:string,age?:number)&#123; return `$&#123;name&#125;`&#125;//可选参数放置于后面 四，默认参数五，剩余参数123456789function sum(1,2,...result):number&#123; var sum = 0 for(var i=0,i&lt;result.length,i++)&#123; sum += result[i] &#125; return sum&#125;alert(sum(1,2,3,4,5)) 六，函数重载]]></content>
+      <categories>
+        <category>-前</category>
+      </categories>
+      <tags>
+        <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ts在vscode的配置以及其数据类型]]></title>
     <url>%2F2019%2F10%2F31%2Fts%E5%9C%A8vscode%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%85%B6%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[一，配置vscode123456//终端tsc init //获取配置文件//tsconfig.json//打开outDir 设置js文件生成的默认路径//打开 &quot;experimentalDecorators&quot;: true使ts支持es7语法 之后再终端(T)中开启监听任务，则每次保存ts文件都会转化成js 二， ts的数据类型ts对于数据类型的定义比js严格的多，在通过var定义时(const和let也可以规定，但是因为他们的唯一性应该不需要设定)，一旦规定数据类型，下之后代码中更改变量若不为相同类型会产生报错 12var str:string = 'admin'//之后的str只能为字符串 ts的数据类型有String,Number,Array,Boolean,Tuple,enum,any,null,undefinded,never,void想比较与javascript,少了object对象，多出了tuple元组类型，any任意类型，enum枚举类型，never类型和void类型1，tuple元组类型属于数组，是拥有多个数据类型的数组，因为在ts中严格规定的arrary的数据类型，当有多重类型时可以使用元组，但是规定的类型数量必须和数组内元素数量相同 1let arr:[number,string] = [1,'1'] 2,anyany类型可以适用于所有的类型 1var a:any = [1,2,4,&quot;2121&quot;] 3,enum枚举类型用于将特定的时间变为数字下标来表示 1234enum Err &#123;"undefinded"==-1,'unll'==-2,'success'=1&#125;const U:Err = Err['undefinded']consoloe.log(U) // -1//当没有规定数字时默认为从0开始的下标 4，voidvoid用于规定没有返回的函数 123function run():void&#123; console.log('run')&#125; 5, nevernever基本可以使用any代替，用于表示其他数据 123(()=&gt;&#123; throw new Error('err')&#125;)()]]></content>
