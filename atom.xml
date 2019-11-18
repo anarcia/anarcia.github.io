@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccblog.club/"/>
-  <updated>2019-11-01T02:26:50.770Z</updated>
+  <updated>2019-11-18T07:36:03.902Z</updated>
   <id>http://ccblog.club/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>electron实战指南</title>
+    <link href="http://ccblog.club/2019/11/18/electron%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/"/>
+    <id>http://ccblog.club/2019/11/18/electron实战指南/</id>
+    <published>2019-11-18T06:23:08.000Z</published>
+    <updated>2019-11-18T07:36:03.902Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一，整体构思"><a href="#一，整体构思" class="headerlink" title="一，整体构思"></a>一，整体构思</h4><p>​        本项目将基于electron搭建一个跨平台的桌面应用，其应用的主要内容是推送壁纸，mv，和个人blog.</p><a id="more"></a><h6 id="实现方法："><a href="#实现方法：" class="headerlink" title="实现方法："></a>实现方法：</h6><p>​        壁纸：puppeteer爬虫</p><p>​        mv:开源的网易云api</p><p>​        blog:nodejs后台的搭建（基于koa，这次不选择express)</p><p>​        登录注册：mongodb(主要为mongoose)</p><p>​        富文本编辑器：kindeditor</p><p>​        页面的实现:vue  vue-electorn</p><h4 id="二，创建项目"><a href="#二，创建项目" class="headerlink" title="二，创建项目"></a>二，创建项目</h4><p>​        vue的项目构建不bb了，具体参考<a href="https://www.jianshu.com/p/d2ab300f8a9a，该文配置很详细" target="_blank" rel="noopener">https://www.jianshu.com/p/d2ab300f8a9a，该文配置很详细</a></p><p>​        另外由于vue-cli如今已经是4版本了，2.9.6虽然主流但太老了，所以本篇文章vue是4.0.0版本</p><h6 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">├──node_modules <span class="comment">// 安装包文件</span></span><br><span class="line">├──public <span class="comment">// 即先前vue-cli版本的index.html</span></span><br><span class="line">├──src <span class="comment">//主文件</span></span><br><span class="line">│├──assets <span class="comment">//静态文件存放目录</span></span><br><span class="line">│├──components <span class="comment">//组件目录</span></span><br><span class="line">│├──router <span class="comment">//路由目录</span></span><br><span class="line">│├──stroe <span class="comment">//vuex目录</span></span><br><span class="line">│├──views <span class="comment">//页面目录</span></span><br><span class="line">│├──App.vue <span class="comment">//Vue主页面</span></span><br><span class="line">│├──background.js <span class="comment">//electron配置文件</span></span><br><span class="line">│├──main.js <span class="comment">//Vue入口文件</span></span><br><span class="line">├──.gitgnore <span class="comment">//git文件</span></span><br><span class="line">├──babel.config.js <span class="comment">//babel配置文件</span></span><br><span class="line">├──package-lock.js <span class="comment">//安装包配置文件</span></span><br><span class="line">├──package.json<span class="comment">//包文件</span></span><br><span class="line">├──README.md <span class="comment">//说明文件</span></span><br></pre></td></tr></table></figure><p>项目结构到此为止</p><h4 id="三，-配置准备"><a href="#三，-配置准备" class="headerlink" title="三， 配置准备"></a>三， 配置准备</h4><p>​        开始构建项目前，需要对electron做一些个性化的配置</p><p>background.js</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置窗口大小</span></span><br><span class="line">  win = <span class="keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">    width: <span class="number">1200</span>, <span class="attr">height</span>: <span class="number">800</span>, <span class="attr">webPreferences</span>: &#123;</span><br><span class="line">      nodeIntegration: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//取消跨域设置</span></span><br><span class="line">webPreferences: &#123;</span><br><span class="line">      webSecurity:<span class="literal">false</span>,</span><br><span class="line">      nodeIntegration: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//取消菜单栏，该项目的目标是制作桌面应用，因此菜单栏保留，如要去除请转教程</span></span><br></pre></td></tr></table></figure><p>改变应用图标</p><p>​        准备256*256的ico文件放于public文件夹中</p><p>background.js</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">icon: `$&#123;__static&#125;/yourname.ico`</span><br></pre></td></tr></table></figure><p>这样基本的配置已经完成了</p><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1574062486673.png" alt="1574062486673"></p><p>打开我们可以看到以上的内容，在下一节我们会开始将App.vue构建成一个完美的主页面。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一，整体构思&quot;&gt;&lt;a href=&quot;#一，整体构思&quot; class=&quot;headerlink&quot; title=&quot;一，整体构思&quot;&gt;&lt;/a&gt;一，整体构思&lt;/h4&gt;&lt;p&gt;​        本项目将基于electron搭建一个跨平台的桌面应用，其应用的主要内容是推送壁纸，mv，和个人blog.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前后端交互" scheme="http://ccblog.club/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
+    
+    
+      <category term="electron -vue -mongodb -nodejs -koa -bootstrap -puppeteer" scheme="http://ccblog.club/tags/electron-vue-mongodb-nodejs-koa-bootstrap-puppeteer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>koa源码解析</title>
+    <link href="http://ccblog.club/2019/11/06/koa%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    <id>http://ccblog.club/2019/11/06/koa源码解析/</id>
+    <published>2019-11-06T05:29:59.000Z</published>
+    <updated>2019-11-06T05:35:04.812Z</updated>
+    
+    <content type="html"><![CDATA[<p>###### </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;###### &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="-koa" scheme="http://ccblog.club/tags/koa/"/>
+    
+  </entry>
   
   <entry>
     <title>ts的函数继承与类的修饰符</title>

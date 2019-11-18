@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[electron实战指南]]></title>
+    <url>%2F2019%2F11%2F18%2Felectron%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%2F</url>
+    <content type="text"><![CDATA[一，整体构思​ 本项目将基于electron搭建一个跨平台的桌面应用，其应用的主要内容是推送壁纸，mv，和个人blog. 实现方法：​ 壁纸：puppeteer爬虫 ​ mv:开源的网易云api ​ blog:nodejs后台的搭建（基于koa，这次不选择express) ​ 登录注册：mongodb(主要为mongoose) ​ 富文本编辑器：kindeditor ​ 页面的实现:vue vue-electorn 二，创建项目​ vue的项目构建不bb了，具体参考https://www.jianshu.com/p/d2ab300f8a9a，该文配置很详细 ​ 另外由于vue-cli如今已经是4版本了，2.9.6虽然主流但太老了，所以本篇文章vue是4.0.0版本 项目结构12345678910111213141516├──node_modules // 安装包文件├──public // 即先前vue-cli版本的index.html├──src //主文件│ ├──assets //静态文件存放目录│ ├──components //组件目录│ ├──router //路由目录│ ├──stroe //vuex目录│ ├──views //页面目录│ ├──App.vue //Vue主页面│ ├──background.js //electron配置文件│ ├──main.js //Vue入口文件├──.gitgnore //git文件├──babel.config.js //babel配置文件├──package-lock.js //安装包配置文件├──package.json //包文件├──README.md //说明文件 项目结构到此为止 三， 配置准备​ 开始构建项目前，需要对electron做一些个性化的配置 background.js 1234567891011121314//配置窗口大小 win = new BrowserWindow(&#123; width: 1200, height: 800, webPreferences: &#123; nodeIntegration: true &#125; &#125;)//取消跨域设置webPreferences: &#123; webSecurity:false, nodeIntegration: true &#125;//取消菜单栏，该项目的目标是制作桌面应用，因此菜单栏保留，如要去除请转教程 改变应用图标 ​ 准备256*256的ico文件放于public文件夹中 background.js 1icon: `$&#123;__static&#125;/yourname.ico` 这样基本的配置已经完成了 打开我们可以看到以上的内容，在下一节我们会开始将App.vue构建成一个完美的主页面。]]></content>
+      <categories>
+        <category>前后端交互</category>
+      </categories>
+      <tags>
+        <tag>electron -vue -mongodb -nodejs -koa -bootstrap -puppeteer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[koa源码解析]]></title>
+    <url>%2F2019%2F11%2F06%2Fkoa%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[######]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>-koa</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ts的函数继承与类的修饰符]]></title>
     <url>%2F2019%2F11%2F01%2Fts%E7%9A%84%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%B1%BB%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[一，ts的继承 ts的基本依靠于extends和super分别获取到类的类型和类名从而继承 123456789101112131415161718class Person&#123; name:string constructor(name:string)&#123; this.name = name &#125; run():string&#123; return `$&#123;this.name&#125;+"在锻炼"` &#125;&#125;//创建一个类class Web extends Person&#123; constructor(name:string)&#123; super(name) &#125; work():string&#123; return `$&#123;this.name&#125;+"在工作"` &#125;&#125; 二，类的修饰符ts关于类的修饰符分为三种，用于指定类名的公开程度 12345/* public 公开，类和子类和外部都可以使用 protected 保护，只有类和子类能使用 private 私有，仅有类本身可以使用*/ 个人觉得typescript的学习知识让你更好的认识到js的一些不足并能够让自己可以意识到这些问题。如今的开发中应用较多的mvc和mvvm甚至是微信小程序的模式（十分类似于基于vue的mvvm）一个主要依靠于jqeury一个依靠于vue，两者都不是基于typescript的，可能当ts的库和更多的框架出现时会逐渐的优于js吧。]]></content>
