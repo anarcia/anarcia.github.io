@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>丧丧的blog</title>
+  <title>cc的blog</title>
   
-  <subtitle>很丧很丧</subtitle>
+  <subtitle>刘忆大居头</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ccblog.club/"/>
-  <updated>2020-02-20T05:36:28.037Z</updated>
+  <updated>2020-05-25T00:50:37.303Z</updated>
   <id>http://ccblog.club/</id>
   
   <author>
@@ -17,20 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>无锡宜家</title>
+    <link href="http://ccblog.club/2020/05/25/%E6%97%A0%E9%94%A1%E5%AE%9C%E5%AE%B6/"/>
+    <id>http://ccblog.club/2020/05/25/无锡宜家/</id>
+    <published>2020-05-25T00:50:37.000Z</published>
+    <updated>2020-05-25T00:50:37.303Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>从需求到实现的宠物顺风车系统</title>
     <link href="http://ccblog.club/2020/02/20/%E4%BB%8E%E9%9C%80%E6%B1%82%E5%88%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%AE%A0%E7%89%A9%E9%A1%BA%E9%A3%8E%E8%BD%A6%E7%B3%BB%E7%BB%9F/"/>
     <id>http://ccblog.club/2020/02/20/从需求到实现的宠物顺风车系统/</id>
     <published>2020-02-20T04:45:52.000Z</published>
-    <updated>2020-02-20T05:36:28.037Z</updated>
+    <updated>2020-02-20T08:28:14.777Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="一-产品"><a href="#一-产品" class="headerlink" title="一,产品"></a>一,产品</h3><h4 id="1-产品的功能框架"><a href="#1-产品的功能框架" class="headerlink" title="1,产品的功能框架"></a>1,产品的功能框架</h4><h5 id="a-功能框架脑图"><a href="#a-功能框架脑图" class="headerlink" title="a 功能框架脑图"></a>a 功能框架脑图</h5><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582176906135.png" alt="1582176906135"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="一-产品需求分析"><a href="#一-产品需求分析" class="headerlink" title="一,产品需求分析"></a>一,产品需求分析</h3><h4 id="1-产品的功能框架"><a href="#1-产品的功能框架" class="headerlink" title="1,产品的功能框架"></a>1,产品的功能框架</h4><h5 id="a-功能框架脑图"><a href="#a-功能框架脑图" class="headerlink" title="a 功能框架脑图"></a>a 功能框架脑图</h5><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582176906135.png" alt="1582176906135"></p><h5 id="b-用户使用路径"><a href="#b-用户使用路径" class="headerlink" title="b 用户使用路径"></a>b 用户使用路径</h5><a id="more"></a><p>​        <img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582178472007.png" alt="1582178472007">        </p><h4 id="2-产品的宏观环境分析"><a href="#2-产品的宏观环境分析" class="headerlink" title="2,产品的宏观环境分析"></a>2,产品的宏观环境分析</h4><h5 id="a，定义市场"><a href="#a，定义市场" class="headerlink" title="a，定义市场"></a>a，定义市场</h5><p>​        该产品的目的是建立一个需要托运宠物和司机的平台，当获取一定用户基数后尝试与宠物商店，猫舍狗舍进行合作，提供一条全新的宠物购买渠道。故定义为“宠物运送平台“。</p><h5 id="b-收集数据"><a href="#b-收集数据" class="headerlink" title="b, 收集数据"></a>b, 收集数据</h5><p>​        根据5118指数</p><p>​        “宠物托运”关键字</p><p>​        流量数据：986</p><p>​        移动指数： 985</p><p>​        360指数:  35</p><p>​        pc日检索量:125</p><h4 id="3-用户画像"><a href="#3-用户画像" class="headerlink" title="3,用户画像"></a>3,用户画像</h4><p>​        该产品的用户对象主要针对于以下特点：</p><p>​        a,没有驾驶基础再异地购买宠物者</p><p>​        b, 过于繁忙无空去外地接送购买宠物者</p><p>​        c, 想赚取一定报酬并且顺路的司机</p><p>​        d,专职运送宠物的私家车司机</p><h3 id="二-产品原型设计"><a href="#二-产品原型设计" class="headerlink" title="二,产品原型设计"></a>二,产品原型设计</h3><h4 id="1-注册登录界面的设计"><a href="#1-注册登录界面的设计" class="headerlink" title="1,注册登录界面的设计"></a>1,注册登录界面的设计</h4><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582181938352.png" alt="1582181938352"></p><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582181964861.png" alt="1582181964861"></p><h4 id="2，注册后的身份选择"><a href="#2，注册后的身份选择" class="headerlink" title="2，注册后的身份选择"></a>2，注册后的身份选择</h4><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582182948758.png" alt="1582182948758"></p><h4 id="3-登录进入主界面（运送宠物）"><a href="#3-登录进入主界面（运送宠物）" class="headerlink" title="3,登录进入主界面（运送宠物）"></a>3,登录进入主界面（运送宠物）</h4><p><img src="C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582187066203.png" alt="1582187066203"></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;一-产品&quot;&gt;&lt;a href=&quot;#一-产品&quot; class=&quot;headerlink&quot; title=&quot;一,产品&quot;&gt;&lt;/a&gt;一,产品&lt;/h3&gt;&lt;h4 id=&quot;1-产品的功能框架&quot;&gt;&lt;a href=&quot;#1-产品的功能框架&quot; class=&quot;headerlink&quot; title=
-      
+      &lt;h3 id=&quot;一-产品需求分析&quot;&gt;&lt;a href=&quot;#一-产品需求分析&quot; class=&quot;headerlink&quot; title=&quot;一,产品需求分析&quot;&gt;&lt;/a&gt;一,产品需求分析&lt;/h3&gt;&lt;h4 id=&quot;1-产品的功能框架&quot;&gt;&lt;a href=&quot;#1-产品的功能框架&quot; class=&quot;headerlink&quot; title=&quot;1,产品的功能框架&quot;&gt;&lt;/a&gt;1,产品的功能框架&lt;/h4&gt;&lt;h5 id=&quot;a-功能框架脑图&quot;&gt;&lt;a href=&quot;#a-功能框架脑图&quot; class=&quot;headerlink&quot; title=&quot;a 功能框架脑图&quot;&gt;&lt;/a&gt;a 功能框架脑图&lt;/h5&gt;&lt;p&gt;&lt;img src=&quot;C:%5CUsers%5C86139%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1582176906135.png&quot; alt=&quot;1582176906135&quot;&gt;&lt;/p&gt;&lt;h5 id=&quot;b-用户使用路径&quot;&gt;&lt;a href=&quot;#b-用户使用路径&quot; class=&quot;headerlink&quot; title=&quot;b 用户使用路径&quot;&gt;&lt;/a&gt;b 用户使用路径&lt;/h5&gt;
     
     </summary>
     
@@ -453,50 +465,6 @@
     
     
       <category term="便捷" scheme="http://ccblog.club/tags/%E4%BE%BF%E6%8D%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>node+mongoose增删改查思路</title>
-    <link href="http://ccblog.club/2019/09/16/node-mongoose%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%80%9D%E8%B7%AF/"/>
-    <id>http://ccblog.club/2019/09/16/node-mongoose增删改查思路/</id>
-    <published>2019-09-16T06:57:26.000Z</published>
-    <updated>2019-09-16T06:58:51.083Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-建立views视图页面"><a href="#1-建立views视图页面" class="headerlink" title="1.建立views视图页面"></a>1.建立views视图页面</h3><table><thead><tr><th>界面名称</th><th>url地址</th></tr></thead><tbody><tr><td>index.html</td><td>/home</td></tr><tr><td>table.html</td><td>/table</td></tr><tr><td>edit.html</td><td>/table/edit</td></tr></tbody></table><a id="more"></a><h3 id="2-安装相关模块插件"><a href="#2-安装相关模块插件" class="headerlink" title="2.安装相关模块插件"></a>2.安装相关模块插件</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm i -S express//安装组件</span><br><span class="line"></span><br><span class="line">npm i -S art-template</span><br><span class="line">npm i -S express-art-template//安装组件</span><br><span class="line"></span><br><span class="line">npm i -S body-parser//用于post获取数据</span><br><span class="line"></span><br><span class="line">npm i -g nodemon//全局安装，用于实时观察代码改动</span><br></pre></td></tr></table></figure><h3 id="3-建立node服务器"><a href="#3-建立node服务器" class="headerlink" title="3.建立node服务器"></a>3.建立node服务器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"开始监听"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)<span class="comment">//开启端口127.0.0.1:3000的服务</span></span><br></pre></td></tr></table></figure><h3 id="4-node中启用相关插件"><a href="#4-node中启用相关插件" class="headerlink" title="4.node中启用相关插件"></a>4.node中启用相关插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">require</span>(<span class="string">'body-parser'</span>)</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/public'</span>,express.static(<span class="string">'./public/'</span>)) <span class="comment">//用于使用public目录中的js，css等</span></span><br><span class="line"></span><br><span class="line">app.engine(<span class="string">'html'</span>,<span class="built_in">require</span>(<span class="string">'express-art-template'</span>))</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded([extend:<span class="literal">false</span>]))</span><br><span class="line">app.use(bodyParser.json())</span><br></pre></td></tr></table></figure><h3 id="5-开启路由"><a href="#5-开启路由" class="headerlink" title="5.开启路由"></a>5.开启路由</h3><p>app.js端</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./routers.js'</span>)</span><br><span class="line"></span><br><span class="line">app.use(router) <span class="comment">//导入router模块</span></span><br></pre></td></tr></table></figure><p>router端</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var router = express.Router()</span><br></pre></td></tr></table></figure><h3 id="6-定义传递方式路径"><a href="#6-定义传递方式路径" class="headerlink" title="6.定义传递方式路径"></a>6.定义传递方式路径</h3><table><thead><tr><th>请求方式</th><th>传递路径</th><th>传递参数</th><th>备注</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h3 id="7-建立mongodb库"><a href="#7-建立mongodb库" class="headerlink" title="7.建立mongodb库"></a>7.建立mongodb库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var mongoose = require(&apos;mongoose&apos;)</span><br><span class="line"></span><br><span class="line">mongoose.connect(&apos;mongodb:localhost://....&apos;)</span><br><span class="line"></span><br><span class="line">var schema = mongoose.schema()</span><br><span class="line"></span><br><span class="line">var userSchema = new schema(&#123;</span><br><span class="line">data:&#123;&#123;options&#125;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = mongooser.model(&quot;user&quot;,userSchema)</span><br></pre></td></tr></table></figure><h3 id="8-增删改查"><a href="#8-增删改查" class="headerlink" title="8.增删改查"></a>8.增删改查</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//请自行查询mongoose语法，例：</span><br><span class="line">var user = require(&apos;./model/user.js&apos;)</span><br><span class="line"></span><br><span class="line">router.get(&apos;/&apos;,function(req,res)&#123;</span><br><span class="line">user.find(function(err)&#123;</span><br><span class="line">if(err)&#123;</span><br><span class="line">consolo.log(err)</span><br><span class="line">&#125;</span><br><span class="line">res.render(&apos;index.html&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-建立views视图页面&quot;&gt;&lt;a href=&quot;#1-建立views视图页面&quot; class=&quot;headerlink&quot; title=&quot;1.建立views视图页面&quot;&gt;&lt;/a&gt;1.建立views视图页面&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;界面名称&lt;/th&gt;
-&lt;th&gt;url地址&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;index.html&lt;/td&gt;
-&lt;td&gt;/home&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;table.html&lt;/td&gt;
-&lt;td&gt;/table&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;edit.html&lt;/td&gt;
-&lt;td&gt;/table/edit&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://ccblog.club/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="nodejs" scheme="http://ccblog.club/tags/nodejs/"/>
-    
-      <category term="mongodb" scheme="http://ccblog.club/tags/mongodb/"/>
     
   </entry>
   

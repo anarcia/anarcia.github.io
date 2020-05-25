@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[无锡宜家]]></title>
+    <url>%2F2020%2F05%2F25%2F%E6%97%A0%E9%94%A1%E5%AE%9C%E5%AE%B6%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[从需求到实现的宠物顺风车系统]]></title>
     <url>%2F2020%2F02%2F20%2F%E4%BB%8E%E9%9C%80%E6%B1%82%E5%88%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%AE%A0%E7%89%A9%E9%A1%BA%E9%A3%8E%E8%BD%A6%E7%B3%BB%E7%BB%9F%2F</url>
-    <content type="text"><![CDATA[一,产品1,产品的功能框架a 功能框架脑图]]></content>
+    <content type="text"><![CDATA[一,产品需求分析1,产品的功能框架a 功能框架脑图b 用户使用路径 ​ 2,产品的宏观环境分析a，定义市场​ 该产品的目的是建立一个需要托运宠物和司机的平台，当获取一定用户基数后尝试与宠物商店，猫舍狗舍进行合作，提供一条全新的宠物购买渠道。故定义为“宠物运送平台“。 b, 收集数据​ 根据5118指数 ​ “宠物托运”关键字 ​ 流量数据：986 ​ 移动指数： 985 ​ 360指数: 35 ​ pc日检索量:125 3,用户画像​ 该产品的用户对象主要针对于以下特点： ​ a,没有驾驶基础再异地购买宠物者 ​ b, 过于繁忙无空去外地接送购买宠物者 ​ c, 想赚取一定报酬并且顺路的司机 ​ d,专职运送宠物的私家车司机 二,产品原型设计1,注册登录界面的设计 2，注册后的身份选择 3,登录进入主界面（运送宠物）]]></content>
       <categories>
         <category>产品实现</category>
       </categories>
